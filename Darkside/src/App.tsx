@@ -13,6 +13,7 @@ function App() {
         <h2 style={{ color: isDark ? "white" : "black" }}>Times "The Button" has been pushed {count}</h2>
         <br />
         <br />
+        localStorage.setItem("count", count.toString())
       </div>
 
       <button
@@ -21,6 +22,7 @@ function App() {
         style={{ background: isDark ? "rgba(170, 59, 255, 0.1)" : "rgba(202, 243, 226, 0.2)", color: isDark ? "#aa3bff" : "#176939" }}
         onClick={() =>{setCount(count + 1) 
           if((count+1)%10 === 0 )alert("Congrats you clicked "+ (count+1) + " times")
+            localStorage.setItem("count", (count+1).toString())
         }}
       >
         The Button
