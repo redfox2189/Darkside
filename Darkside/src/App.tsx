@@ -10,10 +10,9 @@ function App() {
       backgroundColor: isDark ? "rgb(100, 16, 180)" : "rgb(50, 245, 164)", height: "100vh"
     }} id="center">
       <div>
-        <h2 style={{ color: isDark ? "white" : "black" }}>Times "The Button" has been pushed {count}</h2>
+        <h2 style={{ color: isDark ? "white" : "black" }}>Times "The Button" has been pushed {count||localStorage.getItem("count")}</h2>
         <br />
         <br />
-        localStorage.setItem("count", count.toString())
       </div>
 
       <button
@@ -21,7 +20,7 @@ function App() {
         className="counter"
         style={{ background: isDark ? "rgba(170, 59, 255, 0.1)" : "rgba(202, 243, 226, 0.2)", color: isDark ? "#aa3bff" : "#176939" }}
         onClick={() =>{setCount(count + 1) 
-          if((count+1)%10 === 0 )alert("Congrats you clicked "+ (count+1) + " times")
+          if((count+1)%10 === 0 )alert("Congrats you clicked "+ (count+1||localStorage.getItem("count")) + " times")
             localStorage.setItem("count", (count+1).toString())
         }}
       >
