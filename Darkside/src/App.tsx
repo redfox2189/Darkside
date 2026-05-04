@@ -6,7 +6,6 @@ function App() {
   const [isDark, setIsDark] = useState(true)
 
   return (
-    <body style={{ backgroundColor: isDark ? "rgb(110, 16, 180)" : "rgb(20, 236, 146)"}}>
     <section style={{
       backgroundColor: isDark ? "rgb(100, 16, 180)" : "rgb(50, 245, 164)", height: "100vh"
     }} id="center">
@@ -39,7 +38,6 @@ function App() {
         Change Background
       </button>
     </section>
-    </body>
   )
 }
 
